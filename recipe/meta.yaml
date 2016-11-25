@@ -1,7 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "7d33f3e50633d913b4183640920db450de0a5f330c13403b7f139669772f0549" %}
-# genereate with `openssl sha256 <file name>`
+{% set version = "0.4.1" %}
+{% set sha256 = "89a8e47493b337ed89e33c6a06afe0ad34736c63cfbc894738ee2559ef574a27" %}
  
 package:
   name: {{ name|lower }}
@@ -15,8 +14,6 @@ source:
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
-  # current codebase is still python 2
-  # never was tested/confirmed if it runs on win
   skip: True  # [not py27 or win]
 
 requirements:
