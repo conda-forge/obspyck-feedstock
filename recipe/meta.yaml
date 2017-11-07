@@ -1,6 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "89a8e47493b337ed89e33c6a06afe0ad34736c63cfbc894738ee2559ef574a27" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "b845d081db8b697cbc3c4814310e1ca164ba33dbe4dd244c905c6c91eefd1290" %}
  
 package:
   name: {{ name|lower }}
@@ -22,7 +22,7 @@ requirements:
     - setuptools
   run:
     - python
-    - obspy 1.*
+    - obspy >=1.1.0
     - numpy
     - scipy
     - matplotlib
@@ -34,6 +34,8 @@ test:
     - obspyck.obspyck
     - obspyck.util
     - obspyck.qt_designer
+  commands:
+    - obspyck -h
 
 about:
   home: http://github.com/megies/obspyck
