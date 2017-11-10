@@ -1,6 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "b845d081db8b697cbc3c4814310e1ca164ba33dbe4dd244c905c6c91eefd1290" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "5ad6bb7ba5da5629f2fa69e5b2ec80ebf239623a139aff21923508c89b4d1586" %}
  
 package:
   name: {{ name|lower }}
@@ -18,10 +18,10 @@ build:
 
 requirements:
   build:
-    - python
+    - python 2.7*
     - setuptools
   run:
-    - python
+    - python 2.7*
     - obspy >=1.1.0
     - numpy
     - scipy
