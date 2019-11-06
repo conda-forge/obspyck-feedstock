@@ -12,20 +12,23 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  noarch: python
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [win]
+  #script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
-    - python 2.7*
+  host:
+    - python <3
     - setuptools
+    - pip
   run:
-    - python 2.7*
+    - python <3
     - obspy >=1.1.0
     - numpy
     - scipy
     - matplotlib
+    - requests
     - pyqt <5
 
 test:
