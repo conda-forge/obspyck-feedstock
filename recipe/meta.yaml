@@ -1,6 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "5ad6bb7ba5da5629f2fa69e5b2ec80ebf239623a139aff21923508c89b4d1586" %}
+{% set version = "0.6.2" %}
+{% set sha256 = "a2e8e9330b884b0d316ffb486e034b42b0e676e0a6a739894aee1c468cdee21e" %}
  
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   skip: True  # [not py27 or win]
 
