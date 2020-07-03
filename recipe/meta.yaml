@@ -1,7 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "5ad6bb7ba5da5629f2fa69e5b2ec80ebf239623a139aff21923508c89b4d1586" %}
- 
+{% set version = "0.7.1" %}
+{% set sha256 = "ed1fe93e568ce6ada3b0531aec3eb70833ca6f95909a6806645b7e896945c721" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -12,9 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [not py27 or win]
+  skip: true  # [not py27 or win]
 
 requirements:
   build:
@@ -42,7 +41,7 @@ about:
   license: GPL-2.0
   license_family: GPL2
   license_file: LICENSE.txt
-  summary: 'A GUI application for seismogram analysis'
+  summary: A GUI application for seismogram analysis
 
   description: |
     ObsPyck is a GUI application that is intended to cover the tasks in a
