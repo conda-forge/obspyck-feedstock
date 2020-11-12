@@ -22,6 +22,7 @@ requirements:
   host:
     - python 3
     - setuptools
+    - pip
   run:
     - python 3
     - obspy >=1.1.0
