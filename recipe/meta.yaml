@@ -13,8 +13,8 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [not py27 or win]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  # skip: True  # [not py27 or win]
 
 requirements:
   build:
