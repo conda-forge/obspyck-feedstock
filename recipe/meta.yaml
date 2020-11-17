@@ -1,6 +1,6 @@
 {% set name = "obspyck" %}
-{% set version = "0.8.0" %}
-{% set sha256 = "3c813c8b5b738752623665d3d458cdbd9422e3f546f7bb942c5d2d18b482803a" %}
+{% set version = "0.8.1" %}
+{% set sha256 = "e6864e355a12f54dac530d04d14fb93c93d070636cdd1ec6abda90d8e611d5d5" %}
  
 package:
   name: {{ name|lower }}
