@@ -8,23 +8,23 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - obspyck = obspyck.obspyck:main
 
 requirements:
   host:
-    - python 3
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python 3
+    - python >={{ python_min }}
     - obspy >=1.1.0
     - numpy
     - scipy
@@ -32,6 +32,8 @@ requirements:
     - pyqt 5
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - obspyck
     - obspyck.obspyck
