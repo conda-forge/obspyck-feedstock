@@ -20,18 +20,20 @@ build:
 
 requirements:
   host:
-    - python 3
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python 3
+    - python >={{ python_min }}
     - obspy >=1.1.0
     - numpy
     - scipy
-    - matplotlib
+    - matplotlib-base
     - pyqt 5
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - obspyck
     - obspyck.obspyck
