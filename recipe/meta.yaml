@@ -20,11 +20,11 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - setuptools
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - obspy >=1.1.0
     - numpy
     - scipy
@@ -33,7 +33,7 @@ requirements:
 
 test:
   requires:
-    - python {{ python_min }}
+    - python
   imports:
     - obspyck
     - obspyck.obspyck
