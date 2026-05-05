@@ -1,7 +1,6 @@
 {% set name = "obspyck" %}
 {% set version = "0.8.2" %}
 {% set sha256 = "8a001a2c20d2b5fc4f75ace8ded10954cdca64489b68e67a314f04d8a9fc079b" %}
- 
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -13,18 +12,18 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - obspyck = obspyck.obspyck:main
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - obspy >=1.1.0
     - numpy
     - scipy
@@ -33,7 +32,7 @@ requirements:
 
 test:
   requires:
-    - python
+    - python {{ python_min }}
   imports:
     - obspyck
     - obspyck.obspyck
